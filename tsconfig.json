@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "outDir": "lib",
+    "strict": true,
+    "target": "es2021",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "noImplicitAny": true,
+    "noImplicitOverride": true,
+    "experimentalDecorators": true
+  },
+  "include": ["src", "example"]
+}
