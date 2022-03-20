@@ -8,6 +8,7 @@ export type SlashCommandContextOptions = {
 }
 
 export class SlashCommandContext implements ICommandContext {
+  public readonly special = true
   public readonly message: Message
   public readonly options: Record<string, any>
 

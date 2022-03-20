@@ -1,12 +1,11 @@
-import { isSlashCommand } from '../commands/utils/is-slash-command'
-import { Dummy, DummyInstance } from '../Dummy'
+import { decoratorStorage } from './storage'
 
-export const Command = (constructor: Function) => {
-  if (!Dummy[DummyInstance]) {
-    return
-  }
+export interface ISlashCommandsDecoratorData {
+  target: Function
+}
 
-  if (!isSlashCommand(constructor)) {
-    throw new Error('Command must be a SlashCommand')
-  }
+export const SlashCommand = (constructor: Function) => {
+  decoratorStorage.slashCommands.push({
+    target: constructor
+  })
 }

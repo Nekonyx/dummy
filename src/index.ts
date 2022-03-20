@@ -7,18 +7,12 @@ export { Dummy } from './Dummy'
 // Decorators
 //////////////
 export { Command } from './decorators/Command'
+export { SlashCommand } from './decorators/SlashCommand'
+export { AutoLoad } from './decorators/AutoLoad'
 
 //////////////
 // Commands
 //////////////
-
-export {
-  BaseCommand,
-  BaseCommand as BasedCommand
-} from './commands/BaseCommand'
-
-export { BaseSlashCommand } from './commands/BaseSlashCommand'
-
 // Context
 export {
   CommandContext,
@@ -42,7 +36,3 @@ export { StringOption, type IStringOption } from './commands/options/String'
 export { type ICommand } from './commands/interfaces/ICommand'
 export { type ICommandOption } from './commands/interfaces/ICommandOption'
 export { type ICommandContext } from './commands/interfaces/ICommandContext'
-
-// Utils
-export { isCommand } from './commands/utils/is-command'
-export { isSlashCommand } from './commands/utils/is-slash-command'

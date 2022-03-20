@@ -1,15 +1,17 @@
 import {
-  BaseCommand,
+  AutoLoad,
   Command,
   CommandContext,
+  ICommand,
   NumberOption
-} from '../../../src'
+} from '../../src'
 
+@AutoLoad()
 @Command
-export class RandomCommand extends BaseCommand {
-  public override name = 'random'
-  public override description = 'Returns a random number'
-  public override options = [
+export class NonSlashRandomCommand implements ICommand<CommandContext> {
+  public name = 'random'
+  public description = 'Returns a random number'
+  public options = [
     NumberOption({
       name: 'min',
       description: 'The minimum number',
@@ -26,7 +28,7 @@ export class RandomCommand extends BaseCommand {
     })
   ]
 
-  public override async execute(context: CommandContext) {
+  public async execute(context: CommandContext) {
     const min = Number(context.options.min)
     const max = Number(context.options.max)
 
